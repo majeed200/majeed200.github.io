@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="header">
+  <a href="index.html" class="logo"><img src = "img/logo.png" alt = "logo"  height = "60px"></a>
+  <div class="header-right">
+    <a  href="index.html">Home</a>
+	<a class="active" href="fans.html">Fan's</a>
+	 <a href="about.html">About</a>
+	  <a  href="gallery.html">Departments</a>
+    <a href="contact.html">Contact</a>
+
+
+  </div>
+</div>
+<h1 class = "h3_head">FC Barcelona (More than a club)</h1>
+<section class = "lr" style  = "    margin-bottom: 5pc;">
+<div class = "left" style="width:100%">
+<h2 class = "h3_head">Fans Enquiry Form</h2>
+<div class="container">
+  <form method = "post" action="" onsubmit="return validateForm()" name="myForm" id = "myForm">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Full Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="fullname" placeholder="Your Full Name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="email" name="email" placeholder="Your Email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Location</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country" >
+          <option value="australia">Bahrain</option>
+          <option value="canada">Spain</option>
+          <option value="USA">USA</option>
+		   <option value="Germany">Germany</option>
+		    <option value="U.A.E">U.A.E</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Please Write Your Enquiry</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Type your enquiries here..." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button  value="Submit" onclick = "display('myForm')" >Submit</button>
+	  <p id="demo"></p>
+    </div>
+  </form>
+</div>
+</div>
+
+</section>
+
+
+
+<div class="footer">
+  <p>Developed By A.MAJEED, 144-A, Bahrain</p>
+</div>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["email"].value;
+  var z = document.forms["myForm"]["country"].value;
+  var w = document.forms["myForm"]["subject"].value;
+  if (x == "" || y == "" || z == "" || w == "" ) {
+    alert("Please Enter the Values");
+    return false;
+  }
+}
+
+function display(myForm)
+{
+ var myWindow = window.open("", "MsgWindow", "width=500,height=400");
+  myWindow.document.write("<h1>Congratulation...!!!</h1>");
+
+   var name = document.forms["myForm"]["fname"].value;
+    var email = document.forms["myForm"]["email"].value;
+	 var country = document.forms["myForm"]["country"].value;
+	  var subject = document.forms["myForm"]["subject"].value;
+          myWindow.document.write("<h2>Your Name: </h2>", name, "<br>", "<h2>Your Email: </h2>", email, "<br>", "<h2>Your are From: </h2>",country , "<br>", "<h2>Your Detail Enquiry: </h2>", subject);
+
+
+}
+</script>
+</body>
+</html>
